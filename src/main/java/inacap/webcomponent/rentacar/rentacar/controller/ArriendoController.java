@@ -27,7 +27,7 @@ public class ArriendoController {
     
     @GetMapping()
     public List<ArriendoModel> list() {
-        ArriendoModel arriendos =new ArriendoModel();
+        ArriendoModel arriendos = new ArriendoModel();
         
         return ArriendoModel.listaarriendo;
     }

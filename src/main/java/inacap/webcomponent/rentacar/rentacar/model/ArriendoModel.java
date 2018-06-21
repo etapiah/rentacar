@@ -85,6 +85,11 @@ public class ArriendoModel {
         this.medioPagoArriendo = medioPagoArriendo;
     }
 
+    public ArriendoModel() {
+    }
+    
+    
+
     public ArriendoModel(Date fechaArriendo, Time horaArriendo, PersonaModel vendedorArriendo, PersonaModel clienteArriendo, VehiculoModel veiculoArriendo, MedioPagoModel medioPagoArriendo) {
         this.fechaArriendo = fechaArriendo;
         this.horaArriendo = horaArriendo;
