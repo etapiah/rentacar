@@ -14,9 +14,6 @@ public class RegionModel {
     String nombreRegion;
     String detalle;
 
-    public RegionModel() {
-    }
-
     public int getIdRegion() {
         return idRegion;
     }

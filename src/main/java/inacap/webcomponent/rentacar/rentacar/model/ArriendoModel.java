@@ -13,6 +13,9 @@ import java.util.ArrayList;
  *
  * @author USUARIO
  */
+
+@Entity
+@Table(name = "arriendo")
 public class ArriendoModel {
 
     public ArriendoModel(int idArriendo, Date fechaArriendo, Time horaArriendo) {
@@ -85,11 +88,6 @@ public class ArriendoModel {
         this.medioPagoArriendo = medioPagoArriendo;
     }
 
-    public ArriendoModel() {
-    }
-    
-    
-
     public ArriendoModel(Date fechaArriendo, Time horaArriendo, PersonaModel vendedorArriendo, PersonaModel clienteArriendo, VehiculoModel veiculoArriendo, MedioPagoModel medioPagoArriendo) {
         this.fechaArriendo = fechaArriendo;
         this.horaArriendo = horaArriendo;
@@ -108,75 +106,6 @@ public class ArriendoModel {
         this.veiculoArriendo = veiculoArriendo;
         this.medioPagoArriendo = medioPagoArriendo;
     }
-    
-    public static ArrayList<ArriendoModel> listaarriendo=new ArrayList<>() ;
-    
-   public boolean nuevaArriendo(ArriendoModel nuevaArriendo){
-    
-        int id=0;
-        
-        if (!listaarriendo.isEmpty()){
-        
-            for (ArriendoModel arriendo : listaarriendo) {
-                
-                if (arriendo.getIdArriendo()> id){
-                
-                    id = arriendo.getIdArriendo();
-                }
-                
-            }
-        }
-        id++;
-        listaarriendo.add(new ArriendoModel(id,nuevaArriendo.getFechaArriendo(),nuevaArriendo.getHoraArriendo(),nuevaArriendo.getVendedorArriendo(),nuevaArriendo.getClienteArriendo(),
-        nuevaArriendo.getVeiculoArriendo(),nuevaArriendo.getMedioPagoArriendo()));
-        return true;
-    }
-    
-     public ArriendoModel buscaArriendo(int idArriendoBuscada){
-      ArriendoModel Arriendoencontrada = null;
-        if (!listaarriendo.isEmpty()){
-            for (ArriendoModel arriendo : listaarriendo){
-            if (arriendo.getIdArriendo() == idArriendoBuscada){
-                Arriendoencontrada = arriendo;
-            }
-            }
-        }
-    return Arriendoencontrada;
-    }
-  
-  public ArriendoModel editarArriendo(int idArriendo,ArriendoModel arriendoEditar){
-      ArriendoModel arriendoEditada = null;
-        if (!listaarriendo.isEmpty()){
-            for (ArriendoModel arriendo : listaarriendo){
-            if (arriendo.getIdArriendo() == idArriendo){
-                arriendo.setFechaArriendo(arriendoEditar.getFechaArriendo());
-                arriendo.setHoraArriendo(arriendoEditar.getHoraArriendo());
-                arriendo.setVendedorArriendo(arriendoEditar.getVendedorArriendo());
-                arriendo.setClienteArriendo(arriendoEditar.getClienteArriendo());
-                arriendo.setVeiculoArriendo(arriendoEditar.getVeiculoArriendo());
-                arriendo.setMedioPagoArriendo(arriendoEditar.getMedioPagoArriendo());
-                arriendoEditada = arriendo;
-            }
-            }
-        }
-    return arriendoEditada;
-    
-  }
-  
-  public boolean eliminarArriendo(int id){
-      ArriendoModel arriendoEliminada = null;
-      
-      if (!listaarriendo.isEmpty()){
-            for (ArriendoModel arriendo : listaarriendo){
-            if (arriendo.getIdArriendo() == idArriendo){
-                 arriendoEliminada = arriendo;
-            }
-            }
-        }
-      
-      listaarriendo.remove(arriendoEliminada);
-      
-    return true;
-  }  
+
     
 }

@@ -115,10 +115,6 @@ public class TipoPersonaModel {
       
     return true;
   } 
-
-    public boolean nuevaTipoPersona(TipoPersonaModel nuevaTipoPersona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     
     
